@@ -9,7 +9,7 @@ function App() {
     e.preventDefault();
     setError(null);
 
-    fetch("https://chat-gpt-me-server.vercel.app/chat", {
+    fetch("http://localhost:5000/chat", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -18,6 +18,7 @@ function App() {
     })
       .then((res) => res.json())
       .then((result) => {
+        console.log(result)
         setResponse(result.message);
       });
   };
